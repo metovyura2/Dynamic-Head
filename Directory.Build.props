@@ -1,0 +1,9 @@
+<Project>
+  <!--
+    Файл фиксирует параметры восстановления NuGet.
+    Позволяет собирать проект как через dotnet CLI, так и через MSBuild.
+  -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+</Project>

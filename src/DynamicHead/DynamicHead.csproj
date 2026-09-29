@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- WinForms-приложение под Windows -->
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>DynamicHead</AssemblyName>
+    <RootNamespace>DynamicHead</RootNamespace>
+    <!-- Только x64: COM-интероп Core Audio стабильнее под 64-бит -->
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <!-- Отключаем предупреждения о COM-интеропе -->
+    <NoWarn>$(NoWarn);CA1416</NoWarn>
+    <!-- DPI задаём через свойство проекта: манифест с dpiAware вызывает предупреждение WFAC010 -->
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationIcon>assets\app-speakers.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <Product>Dynamic-Head</Product>
+    <AssemblyTitle>Dynamic-Head</AssemblyTitle>
+    <Company>Dynamic-Head</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Управление устройствами вывода звука (Core Audio API) -->
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Иконки кладём рядом с exe, чтобы менять их в рантайме -->
+    <None Update="assets\*.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

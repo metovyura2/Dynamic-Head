@@ -1,0 +1,17 @@
+# Сборка .NET
+bin/
+obj/
+dist/
+dist-selfcontained/
+*.user
+*.suo
+.vs/
+
+# Временные файлы
+sdks.txt
+tools/_tmp/
+_install/
+*.log
+
+# Настройки приложения (создаются при первом запуске)
+config.json
