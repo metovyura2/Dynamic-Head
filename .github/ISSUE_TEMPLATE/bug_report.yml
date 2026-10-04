@@ -1,0 +1,65 @@
+name: Bug report
+description: Report a problem with Dynamic-Head
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill in the details below.
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+      placeholder: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Right-click the tray icon
+        2. Select '...'
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: Dynamic-Head version
+      description: Which version are you using? (see the file properties or the release tag)
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows version
+      description: e.g. Windows 11 23H2 (build 22631)
+    validations:
+      required: true
+  - type: input
+    id: dotnet-runtime
+    attributes:
+      label: .NET Desktop Runtime version
+      description: Run `dotnet --list-runtimes` and paste the `Microsoft.WindowsDesktop.App` line.
+      placeholder: "Microsoft.WindowsDesktop.App 8.0.x"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Screenshots / logs
+      description: Add screenshots or any error messages if applicable.
+    validations:
+      required: false
